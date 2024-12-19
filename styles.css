@@ -1,0 +1,104 @@
+/* Reset grid layout */
+body {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Times New Roman', serif;  /* More newspaper-like font */
+}
+
+/* Header styling */
+header {
+    border-bottom: 2px solid black;
+    text-align: left;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: 900;
+}
+
+#current-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+/* Navigation styling */
+nav {
+    float: left;
+    width: 150px;
+    background: none;
+    color: black;
+    border-right: 1px solid #ddd;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+}
+
+/* Main content */
+main {
+    margin-left: 170px;  /* Space for nav */
+    column-count: 3;
+    column-gap: 20px;
+    padding: 20px 0;
+}
+
+section {
+    break-inside: avoid-column;
+    margin-bottom: 20px;
+}
+
+/* Aside styling */
+aside {
+    float: right;
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0 0 20px 20px;
+    background: #f9f9f9;
+}
+
+/* Button styling */
+aside button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid black;
+    background: white;
+    color: black;
+}
+
+aside button:hover {
+    background: #eee;
+}
+.scrolling-text {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    height: 1.5rem; /* Adjust based on your text size */
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding-right: 50px; /* Space between repeated content */
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
