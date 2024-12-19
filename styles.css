@@ -1,9 +1,9 @@
 /* Reset grid layout */
 body {
     display: block;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 5%;
     font-family: 'Times New Roman', serif;  /* More newspaper-like font */
 }
 
@@ -17,7 +17,7 @@ header {
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 8rem;
     margin: 0;
     font-weight: 900;
 }
@@ -26,6 +26,7 @@ header h1 {
     position: absolute;
     top: 0;
     right: 0;
+    font-size: 1.5rem;
     text-align: right;
 }
 
@@ -45,15 +46,26 @@ nav ul li a {
 
 /* Main content */
 main {
-    margin-left: 170px;  /* Space for nav */
-    column-count: 3;
-    column-gap: 20px;
-    padding: 20px 0;
+    margin-left: 170px;
+    display: flex;
+    column-count: unset;
+    column-gap: unset;
+    padding: 2px 0;
+    max-width: calc(100% - 170px - 220px);
+    justify-content: space-between;
 }
 
 section {
-    break-inside: avoid-column;
+    break-inside: unset;
     margin-bottom: 20px;
+    flex: 1;
+    padding: 0 15px;
+}
+
+/* Optional: Add this if you want the headings to be smaller */
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 /* Aside styling */
@@ -90,8 +102,8 @@ aside button:hover {
 
 .scrolling-text span {
     display: inline-block;
-    padding-right: 50px; /* Space between repeated content */
-    animation: scroll 10s linear infinite;
+    padding-right: 70%; /* Space between repeated content */
+    animation: scroll 45s linear infinite;
 }
 
 @keyframes scroll {
@@ -102,3 +114,48 @@ aside button:hover {
         transform: translateX(-100%);
     }
 }
+
+.big-picture {
+    margin-left: 170px; /* Same as main's margin-left to align with content */
+    font-size: 2.5rem;
+    margin-bottom: 2px;
+    padding-top: 2px;
+}
+@media (max-width: 768px) {
+    nav {
+        float: none;
+        width: 100%;
+        border-right: none;
+        margin-right: 0;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    aside {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+aside button {
+    transition: background 0.3s, transform 0.3s;
+}
+
+aside button:hover {
+    background: #eee;
+    transform: scale(1.02);
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    cursor: url('custom-cursor.png'), auto; /* Replace 'custom-cursor.png' with the path to your image */
+}
+
+a {
+    cursor: pointer; /* Ensure clickable links still look interactive */
+}
+
